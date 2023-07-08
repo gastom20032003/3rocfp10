@@ -1,0 +1,262 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "T3-Strings-ej resueltos.ipynb",
+      "provenance": [],
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/gastom20032003/3rocfp10/blob/main/T3_Strings_ej_resueltos.ipynb%20gasti\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "JVBGAW7TD-oC"
+      },
+      "source": [
+        "# Ejercicio\n",
+        "\n",
+        "Dado un string, vamos a pedir al usuario que introduzca una palabra perteneciente a dicho string y vamos a obtener el substring sin la palabra indicada por el usuario utilizando el método `.find()` y la función `len()`"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "i0ZDtL2VIjon",
+        "outputId": "3e911ee1-dd9c-4b67-bb3d-43f1a218aa12"
+      },
+      "source": [
+        "string = \"la verdadera democracia es aquella donde el gobierno hace lo que el pueblo quiere y defiende un solo interes: el del pueblo\"\n",
+        "print (\"este es el string original:\\n\",string)\n",
+        "\n",
+        "print(\"Introduce la palabra que quiras eliminar del string original:\")\n",
+        "word= input(\"palabra: \")\n",
+        "\n",
+        "idx = string.find(word)\n",
+        "substring = string[:idx] + string[(idx+ len(word)+1):]\n",
+        "print(substring)\n"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "este es el string original:\n",
+            " la verdadera democracia es aquella donde el gobierno hace lo que el pueblo quiere y defiende un solo interes: el del pueblo\n",
+            "Introduce la palabra que quiras eliminar del string original:\n",
+            "palabra: aquella\n",
+            "la verdadera democracia es donde el gobierno hace lo que el pueblo quiere y defiende un solo interes: el del pueblo\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "_cprmeE43x3Q"
+      },
+      "source": [
+        "# Ejercicio 2\n",
+        "\n",
+        "Vamos a aprovechar el ejercicio sobre la canción \"Cumpleaños feliz\" y vamos a permitir al usuario elegir a quien va dirigida la canción"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\"ingrese el nombre del cumpleañere\")\n",
+        "nombre= input()\n",
+        "\n",
+        "s1= \"¡Que los cumplas feliz!\"\n",
+        "s2= \"¡Que los cumplas amiguete\"\n",
+        "\n",
+        "cancion= (s1 + \"\\n\") * 2 + (s2.replace(\"amiguete\",nombre) + \",\\n\") + s1\n",
+        "print(cancion)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "MvmE6GXLDHr9",
+        "outputId": "c7ef4c8c-2f7a-447a-bd75-027cdac3cbd6"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "ingrese el nombre del cumpleañere\n",
+            "moskito\n",
+            "¡Que los cumplas feliz!\n",
+            "¡Que los cumplas feliz!\n",
+            "¡Que los cumplas moskito,\n",
+            "¡Que los cumplas feliz!\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "ZfRrR6Hi4HWc"
+      },
+      "source": [
+        "# Ejercicio 3\n",
+        "\n",
+        "Vamos a pedirle al usuario palabras o frases y le vamos a devolver el mismo string modificado con alguno de los métodos aprendidos según se indique:\n",
+        "\n",
+        "1. Devolver la palabra en mayúscula\n",
+        "2. Devolver la frase con todas las palabras empezando en mayúscula\n",
+        "3. Devolver la palabra (con 3 o más letras) con todas las letras en minúscula salvo la tercera letra\n",
+        "4. Devolver la palabra con todas las letras en mayúsculas salvo la primera y la última\n",
+        "5. Devolver la frase donde cada vez que aparezcan las dos primeras letras de la primera palabra, sean substituidas por cualesquiera otras dos letras."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#1\n",
+        "print(\"ingrese una frase o una palabra\")\n",
+        "frase = input()\n",
+        "print(frase.upper())"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "MUOeZMvxRcvq",
+        "outputId": "c7c217ef-8383-42e8-ddbd-975c88325993"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "ingrese una frase o una palabra\n",
+            "moskito\n",
+            "MOSKITO\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#2\n",
+        "print(\"Introduce una frase y yo te devuelvo todas las palabras empezando en mayúscula\")\n",
+        "s = input()\n",
+        "print(s.title())"
+      ],
+      "metadata": {
+        "id": "CD8FzPQ_aozJ"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "3#\n",
+        "print(\"Introduce una palabra con 3 letras o más y yo te devuelvo todas sus letras en minúscula salvo la tercera\")\n",
+        "word = input()\n",
+        "word = word[:2].lower() + word[2].upper() + word[3:].lower()\n",
+        "print(word)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "LjVVmzWFRqkE",
+        "outputId": "bd1d7d98-1598-47bf-e002-e90c708e1d87"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Introduce una palabra con 3 letras o más y yo te devuelvo todas sus letras en minúscula salvo la tercera\n",
+            "aro negro\n",
+            "arO negro\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#4\n",
+        "print(\"Introduce una palabra y yo te devuelvo todas sus letras en mayúscula salvo la primera y la última\")\n",
+        "word = input()\n",
+        "word = word[0].lower() + word[1:(len(word) - 1)].upper() + word[-1].lower()\n",
+        "print(word)"
+      ],
+      "metadata": {
+        "id": "YohbkvQqa3OL"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#5\n",
+        "subs = \"Peron\"\n",
+        "print(\"Introduce una frase y yo te la devuelvo sustituyendo las cuatro primeras letras de la primera palabra por las letras {}\".format(subs))\n",
+        "s = input()\n",
+        "print(s.replace(s[:4], subs))"
+      ],
+      "metadata": {
+        "id": "BgLBNMUva-o-"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "YhadEaOZ7AAF"
+      },
+      "source": [
+        "# Ejercicio 4\n",
+        "\n",
+        "Vamos a pedirle al usuario su año de nacimiento y el año actual y le vamos a imprimir por pantalla su edad"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "year = int(input(\"Introduce tu año de nacimiento: \"))\n",
+        "this_year = int(input(\"Introduce el año actual: \"))\n",
+        "age = this_year - year\n",
+        "print(\"En el año {} tienes {} años\".format(this_year, age))"
+      ],
+      "metadata": {
+        "id": "h1buecaC-LC1"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
